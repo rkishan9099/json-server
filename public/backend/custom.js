@@ -6,7 +6,7 @@ let lacture_list = document.querySelector("#lacture_list");
 
 let adminId = 1;
 let id = 1;
-
+var main_url='https://project-cours.herokuapp.com/';
 //// data fetch in json server through this function👇👇👇 
 const fetchData = async (url) => {
   try {
@@ -125,7 +125,7 @@ const removeLacture = (id) => {
 
 /// course add in json server👇👇👇👇
 const addCourece = async (id) => {
- let url = 'http://localhost:3000/courses?addedBy='+id;
+ let url = main_url+'courses?addedBy='+id;
   cource = await fetchData(url);
   // console.log(cource)
   let html = ``;
@@ -163,11 +163,11 @@ addCourece(id);
 
 /// course remove from json server 👇👇👇
 async function removeCource(id) {
-  let url = "http://localhost:3000/courses/"+id;
+  let url = main_url+"/courses/"+id;
  let data= await deleteRecord(url);
  console.log(data);
   /***** course lacture delete ***/
-  let url1="http://localhost:3000/course_lacture?courseId="+id;
+  let url1=main_url+"course_lacture?courseId="+id;
  await deleteRecord(url1);
   document.querySelector(".course_"+id).remove();
 
@@ -186,7 +186,7 @@ const lactureAdd = async (cid) => {
       video: lacture_video[i].value,
       desc: lacture_desc[i].value
     }
-    await addRecord('http://localhost:3000/course_lacture', lact_data);
+    await addRecord(main_url+'course_lacture', lact_data);
     //console.log(lact_data)
   }
   }
@@ -194,7 +194,7 @@ const lactureAdd = async (cid) => {
   async function submitAddCource() {
     let course_input = getCourseInput();
     console.log(course_input);
-    let url = "http://localhost:3000/courses";
+    let url = main_url+"courses";
     let res = await addRecord(url, course_input);
     let inserted_course_id = res.id;
     await lactureAdd(inserted_course_id);
@@ -213,7 +213,7 @@ console.log(params);
 if(params.get("id")!="" && params.get("id")>0){
 let cid = params.get("id");
 //console.log(cid)
-let url = "http://localhost:3000/courses/" + cid + "?addedBy=" + adminId;
+let url = main_url+"courses/" + cid + "?addedBy=" + adminId;
 
 fetch(url)
   .then((response) => response.json())
@@ -223,7 +223,7 @@ fetch(url)
     course_price.value = data.price;
   });
 const uplactList = async (cid) => {
-  let lac_list = await fetchData('http://localhost:3000/course_lacture?courseId=' + cid);
+  let lac_list = await fetchData(main_url+'course_lacture?courseId=' + cid);
   //console.log(lac_list);
   let up_lact_list = document.querySelector("#up_lact_list");
   let html = ``;
@@ -269,7 +269,7 @@ uplactList(cid);
 
 /************ UPDATE LACTURE  ******************/
 const updateLacture = async (lid, cid) => {
-  let url = 'http://localhost:3000/course_lacture/' + lid;
+  let url = main_url+'course_lacture/' + lid;
   let lact_title = document.querySelector("#lact_title_" + lid);
   let lact_video = document.querySelector("#lact_video_" + lid);
   let lact_desc = document.querySelector("#lact_desc_" + lid);
@@ -288,7 +288,7 @@ const updateLacture = async (lid, cid) => {
 
 /************ DELETE LACTURE ***********/
 const deleteLacture = async (lac_count, lid) => {
-  let url = "http://localhost:3000/course_lacture/" + lid;
+  let url = main_url+"course_lacture/" + lid;
   document.querySelector('.lacture_' + lac_count).remove();
   await deleteRecord(url);
   alert("deleted")
@@ -296,7 +296,7 @@ const deleteLacture = async (lac_count, lid) => {
 
 /*************** UPDATE COURSE ****"********/
 const updateCourse = async () => {
-  let url = "http://localhost:3000/courses/" + cid;
+  let url = main_url+"courses/" + cid;
   let data = getCourseInput();
   let res = await updateData(url, data);
   course_image.value = res.image;
@@ -314,7 +314,7 @@ login_btn.addEventListener("click",async ()=>{
   let login_pass= document.querySelector("#login_pass").value;
   let login_email=document.querySelector("#login_email").value;
   if(login_pass!=""&& login_pass!=""){
-   let url= `http://localhost:3000/admins?email=${login_email}&password=${login_pass}`;
+   let url= main_url+`admins?email=${login_email}&password=${login_pass}`;
  let data=  await fetchData(url);
    console.log(data);
   }
