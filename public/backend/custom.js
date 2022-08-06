@@ -6,7 +6,10 @@ let lacture_list = document.querySelector("#lacture_list");
 
 let adminId = 1;
 let id = 1;
-var main_url='https://project-cours.herokuapp.com/';
+let url_parse=new URL(window.location);
+let main_url= url_parse.origin+'/';
+console.log(main_url)
+
 //// data fetch in json server through this function👇👇👇 
 const fetchData = async (url) => {
   try {
