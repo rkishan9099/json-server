@@ -1,0 +1,79 @@
+{
+  "login": [
+    {
+      "email": "hjkkj@gdhhdj.kk",
+      "password": "jjddk",
+      "id": 1
+    },
+    {
+      "email": "fgghhfffft@ddff.gggg",
+      "password": "ffjkkkj",
+      "id": 2
+    }
+  ],
+  "admins": [
+    {
+      "id": 1,
+      "name": "kishan",
+      "email": "xyz@g.ail.com",
+      "password": "1234"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "xyz",
+      "email": "xyz@gmail.com"
+    },
+    {
+      "name": "Akash",
+      "email": "xyz@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Akash",
+      "email": "xyz@gmail.com",
+      "id": 3
+    },
+    {
+      "email": "rkishan9099@gmail.com",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "email": "kishanramani9099@gmail.com",
+      "password": "1234",
+      "id": 5
+    },
+    {
+      "email": "kjssssssss@jsnss.jsksk",
+      "password": "j3jennsk",
+      "id": 6
+    },
+    {
+      "email": "hhvvf@ssss.jh",
+      "password": "fghjnn",
+      "id": 7
+    }
+  ],
+  "courses": [
+    {
+      "title": "Demo ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlBWVZ0AHeuENsib6dGz8vAyQk_VLGLCXS-g&usqp=CAU",
+      "price": "499",
+      "addedBy": 1,
+      "id": 1
+    }
+  ],
+  "course_lacture": [
+    {
+      "courseId": 1,
+      "title": "Lacture ",
+      "video": "Video 1",
+      "desc": "Jjj",
+      "id": 1
+    }
+  ],
+  "wishlist": [],
+  "purchases": []
+}

@@ -9,7 +9,7 @@
   "keywords": [
     "ninjakodtv, json-server,heroku, node, REST API"
   ],
-  "author": "Ninjakod TV Mehmet Yılmaz",
+  "author": "RAMANI KISHAN",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.17.0"
